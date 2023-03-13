@@ -1,7 +1,12 @@
 let gridContainer = document.getElementById('gridContainer');
-let gridSize = 16;
+
 let rowNum =1;
 let rowContainer;
+
+let gridSize;
+do {
+  gridSize = prompt("Input a grid Size (No higher than 100)");
+} while (isNaN(gridSize) || gridSize > 100 || gridSize < 1);
 
 //make a function that creates a grid
 function createGrid(size)
@@ -19,7 +24,7 @@ function createGrid(size)
 
         
        // rowContainer.style.display = "flex";
-        rowContainer.style.backgroundColor ='pink';
+        //rowContainer.style.backgroundColor ='pink';
         //rowContainer.style.flexDirection = "column";
         rowContainer.setAttribute('id','row'+rowNum);
         rowContainer.classList.add('row');
@@ -36,11 +41,13 @@ function createGrid(size)
     {   
         for(let i =1; i<=gridSize; i++)
         {   let currentRow = node;
+            
+
             let gridBox = document.createElement("div");
+            gridBox.addEventListener('mouseenter',()=> gridBox.classList.add("mouseHover"));
             
-            
-            gridBox.innerHTML ="Box";
-            gridBox.style.backgroundColor ='lightblue'
+            gridBox.innerHTML ="";
+          
             gridBox.classList.add("box"); 
             //gridBox.style.width = '100%';
             //gridBox.style.height = '100%';
