@@ -13,23 +13,15 @@ function createGrid(size)
 {   
     //maybe iterate through a loop and create 1 square(div) for for each time it runs.
     //have the loop assign an id to each row of a letter+number as in A1-A2-A3 etc..., letters for rows, numbers for columns    
-    //Creates a row of divs based on the size specified and appends it to the html file.
+    //Creaates a row of divs based on the size specified and appends it to the html file.
     //use a forEach loop on the nodelist created for each rowContainer, and attach each gridbox to it.
 
     for(let i =1; i<=size; i++)
     {
         
-        let rowContainer = document.createElement("div");
-        
-
-        
-       // rowContainer.style.display = "flex";
-        //rowContainer.style.backgroundColor ='pink';
-        //rowContainer.style.flexDirection = "column";
+        let rowContainer = document.createElement("div");   
         rowContainer.setAttribute('id','row'+rowNum);
         rowContainer.classList.add('row');
-        
-
         gridContainer.appendChild(rowContainer);
 
         rowNum++;
