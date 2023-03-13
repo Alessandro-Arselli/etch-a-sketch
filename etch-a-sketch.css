@@ -1,0 +1,34 @@
+html, body {
+    left: 0px;
+    margin: none;
+    height: 100%;
+    
+  
+  }
+#gridContainer{
+    display: flex;
+    flex-direction: column;
+    
+    height: 100%;
+    
+   
+}
+.box{
+    flex:1;
+    flex-grow:1;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+}
+
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-grow:1;
+    width: 100%;
+    height: 100%;
+    
+   
+    
+}
