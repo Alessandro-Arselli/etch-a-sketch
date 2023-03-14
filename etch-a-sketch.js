@@ -1,12 +1,15 @@
 let gridContainer = document.getElementById('gridContainer');
-
+let gridButton = document.getElementById('gridButton');
 let rowNum =1;
 let rowContainer;
 
-let gridSize;
-do {
+
+let gridSize =16;
+//gridSize  = addEventListener('click', gridButton);
+/*do {
   gridSize = prompt("Input a grid Size (No higher than 100)");
-} while (isNaN(gridSize) || gridSize > 100 || gridSize < 1);
+ 
+} while (isNaN(gridSize) || gridSize > 100 || gridSize < 1);*/
 
 //make a function that creates a grid
 function createGrid(size)
@@ -36,8 +39,19 @@ function createGrid(size)
             
 
             let gridBox = document.createElement("div");
-            gridBox.addEventListener('mouseenter',()=> gridBox.classList.add("mouseHover"));
-            
+           // gridBox.addEventListener('mousedown',()=> gridBox.classList.add("mouseHover"));
+           gridBox.addEventListener('mousedown',()=> gridBox.classList.add("mouseHover"));
+            gridBox.addEventListener('mousemove', (event) => {
+                if (event.buttons === 1) {
+                    gridBox.classList.add("mouseHover");
+                }
+            });
+            gridBox.addEventListener('mousedown', (event) => {
+                event.preventDefault();
+                gridBox.classList.add("mouseHover");
+              });
+        
+      
             gridBox.innerHTML ="";
           
             gridBox.classList.add("box"); 
