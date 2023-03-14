@@ -6,10 +6,10 @@ let rowContainer;
 
 let gridSize =16;
 //gridSize  = addEventListener('click', gridButton);
-/*do {
+do {
   gridSize = prompt("Input a grid Size (No higher than 100)");
  
-} while (isNaN(gridSize) || gridSize > 100 || gridSize < 1);*/
+} while (isNaN(gridSize) || gridSize > 100 || gridSize < 1);
 
 //make a function that creates a grid
 function createGrid(size)
